@@ -7,7 +7,9 @@ const languageCode =
   navigator.systemLanguage ||
   navigator.browserLanguage ||
   "en-US";
-const data = await (await fetch(`/i18n/${languageCode}.toml`)).text();
+let response = await fetch(`/i18n/${languageCode}.toml`);
+if (!response.ok) response = await fetch("/i18n/en-US.toml");
+const data = await response.text();
 const strings = parse(data);
 
 export default strings;

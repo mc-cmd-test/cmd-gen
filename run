@@ -1,0 +1,34 @@
+#!/bin/bash
+
+case $1 in
+
+dev | development)
+echo Running development server...
+/usr/local/bin/static-web-server -w server.dev.toml
+;;
+
+prod | production)
+echo Running production server...
+# todo: add http/2 and tls support for production
+/usr/local/bin/static-web-server -w server.prod.toml
+;;
+
+install-server | install)
+echo Installing SWS...
+curl --proto '=https' --tlsv1.2 -sSfL https://get.static-web-server.net | sh
+;;
+
+lint)
+;;
+
+test)
+;;
+
+fmt | format)
+;;
+
+*)
+echo Error: No action provided
+;;
+
+esac

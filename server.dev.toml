@@ -1,0 +1,21 @@
+[general]
+port = 8080
+host = "::"
+root = "./src"
+log-level = "trace"
+cache-control-headers = false
+compression = false
+page404 = "./src/404.html"
+page50x = "./src/500.html"
+page-fallback = "./src/index.html"
+directory-listing = true
+log-remote-address = true
+ignore-hidden-files = true
+redirect-trailing-slash = true
+
+[[advanced.headers]]
+source = "*"
+[advanced.headers.headers]
+Cache-Control = "no-cache, no-store, must-revalidate"
+Pragma = "no-cache"
+Expires = "0"

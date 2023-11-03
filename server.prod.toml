@@ -1,0 +1,20 @@
+[general]
+port = 8080
+host = "::"
+root = "./src"
+log-level = "info"
+cache-control-headers = true
+compression = true
+compression-static = true
+page404 = "./src/404.html"
+page50x = "./src/500.html"
+page-fallback = "./src/index.html"
+directory-listing = false
+log-remote-address = true
+redirect-trailing-slash = true
+ignore-hidden-files = true
+grace-period = 60
+# maintenance-mode = true
+# maintenance-mode-status = 503 
+# maintenance-mode-file = "./serverdown.html"
+
